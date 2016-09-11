@@ -1,5 +1,6 @@
 import * as assert from 'power-assert';
-import {VisibilityFilter, doSetVisibilityFilter} from '../../src/actions/doSetVisibilityFilter';
+import {VisibilityFilter} from '../../src/models';
+import {doSetVisibilityFilter} from '../../src/actions/doSetVisibilityFilter';
 
 describe('doSetVisibilityFilter', () => {
     it('create action1', () => {

@@ -4,6 +4,7 @@
   "globalDependencies": {
     "empower": "registry:dt/empower#0.0.0+20160317120654",
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
+    "object-assign": "registry:dt/object-assign#4.0.1+20160819193737",
     "power-assert": "registry:dt/power-assert#0.0.0+20160316155526",
     "power-assert-formatter": "registry:dt/power-assert-formatter#0.0.0+20160317120654",
     "react": "registry:dt/react#0.14.0+20160829191040",
