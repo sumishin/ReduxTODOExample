@@ -1,0 +1,50 @@
+{
+  "name": "ReduxTODO_Example",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "postinstall": "typings install",
+    "clean": "rimraf ./www/asset/*",
+    "start:watch": "webpack --progress --colors --watch --config ./webpack.config.js",
+    "start:server": "browser-sync start --config bs-config.js",
+    "start": "npm-run-all clean -p start:watch start:server",
+    "test": "karma start",
+    "build": "webpack --progress --colors --config ./webpack.config.js",
+    "build:prod": "webpack -p --progress --config ./webpack-production.config.js",
+    "rebuild:prod": "npm-run-all clean build:prod"
+  },
+  "directories": {
+    "src": "src/",
+    "test": "spec/"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.15.0",
+    "intelli-espower-loader": "^1.0.1",
+    "json-loader": "^0.5.4",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.1.1",
+    "karma-mocha-reporter": "^2.1.0",
+    "karma-sinon": "^1.0.5",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^1.8.0",
+    "mocha": "^3.0.2",
+    "npm-run-all": "^3.1.0",
+    "power-assert": "^1.4.1",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "react-redux": "^4.4.5",
+    "redux": "^3.6.0",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.5",
+    "ts-loader": "^0.8.2",
+    "tslint": "^3.15.1",
+    "tslint-loader": "^2.1.5",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.3",
+    "webpack": "^1.13.2",
+    "webpack-espower-loader": "^1.0.1"
+  }
+}
