@@ -51,12 +51,6 @@
 /* 1 */
 /***/ function(module, exports) {
 
-	"use strict";
-	function test() {
-	    return 'hoge';
-	}
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = test;
 
 
 /***/ }
