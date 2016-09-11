@@ -7,7 +7,7 @@
     "clean": "rimraf ./www/asset/*",
     "start:watch": "webpack --progress --colors --watch --config ./webpack.config.js",
     "start:server": "browser-sync start --config bs-config.js",
-    "start": "npm-run-all clean -p start:watch start:server",
+    "start": "npm-run-all clean build -p start:watch start:server",
     "test": "karma start",
     "build": "webpack --progress --colors --config ./webpack.config.js",
     "build:prod": "webpack -p --progress --config ./webpack-production.config.js",
