@@ -21,8 +21,7 @@ module.exports = {
         ],
         loaders: [
             { test: /\.tsx?$/, loader: "ts-loader" },
-            { test: /\.json$/, loader: 'json-loader' },
-            { test: /\.html$/, loader: 'file-loader?name=[name].[ext]' }
+            { test: /\.json$/, loader: 'json-loader' }
         ],
         postLoaders: [
             { test: /\.spec\.tsx?$/, loader: 'webpack-espower-loader' }
