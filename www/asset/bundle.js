@@ -53,8 +53,28 @@
 
 	"use strict";
 	var redux_1 = __webpack_require__(2);
-	var reducer_1 = __webpack_require__(26);
+	var reducer_1 = __webpack_require__(18);
+	var doAddTodo_1 = __webpack_require__(22);
+	var doToggleTodo_1 = __webpack_require__(23);
+	var doSetVisibilityFilter_1 = __webpack_require__(25);
+	var models_1 = __webpack_require__(21);
 	var store = redux_1.createStore(reducer_1.default);
+	// Log the initial state
+	console.log(store.getState());
+	// Every time the state changes, log it
+	// Note that subscribe() returns a function for unregistering the listener
+	var unsubscribe = store.subscribe(function () {
+	    return console.log(store.getState());
+	});
+	// Dispatch some actions
+	store.dispatch(doAddTodo_1.doAddTodo('Learn about actions'));
+	store.dispatch(doAddTodo_1.doAddTodo('Learn about reducers'));
+	store.dispatch(doAddTodo_1.doAddTodo('Learn about store'));
+	store.dispatch(doToggleTodo_1.doToggleTodo(0));
+	store.dispatch(doToggleTodo_1.doToggleTodo(1));
+	store.dispatch(doSetVisibilityFilter_1.doSetVisibilityFilter(models_1.VisibilityFilter.ShowCompleted));
+	// Stop listening to state updates
+	unsubscribe();
 
 
 /***/ },
@@ -1135,7 +1155,22 @@
 	}
 
 /***/ },
-/* 18 */,
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	var redux_1 = __webpack_require__(2);
+	var todoStateReducer_1 = __webpack_require__(19);
+	var visibilityFilterStateReducer_1 = __webpack_require__(24);
+	var appReducer = redux_1.combineReducers({
+	    todoStateReducer: todoStateReducer_1.todoStateReducer,
+	    visibilityFilterStateReducer: visibilityFilterStateReducer_1.visibilityFilterStateReducer,
+	});
+	Object.defineProperty(exports, "__esModule", { value: true });
+	exports.default = appReducer;
+
+
+/***/ },
 /* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1377,22 +1412,6 @@
 	    };
 	}
 	exports.doSetVisibilityFilter = doSetVisibilityFilter;
-
-
-/***/ },
-/* 26 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-	var redux_1 = __webpack_require__(2);
-	var todoStateReducer_1 = __webpack_require__(19);
-	var visibilityFilterStateReducer_1 = __webpack_require__(24);
-	var appReducer = redux_1.combineReducers({
-	    todoStateReducer: todoStateReducer_1.todoStateReducer,
-	    visibilityFilterStateReducer: visibilityFilterStateReducer_1.visibilityFilterStateReducer,
-	});
-	Object.defineProperty(exports, "__esModule", { value: true });
-	exports.default = appReducer;
 
 
 /***/ }

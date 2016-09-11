@@ -1,7 +1,7 @@
 export enum VisibilityFilter {
-  ShowAll,
-  ShowCompleted,
-  ShowActive
+    ShowAll,
+    ShowCompleted,
+    ShowActive
 }
 
 export class TodoTask {

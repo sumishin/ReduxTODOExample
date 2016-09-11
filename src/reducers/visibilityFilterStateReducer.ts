@@ -1,5 +1,3 @@
-import objectAssign = require('object-assign');
-
 import IAction from '../actions/IAction';
 import {VisibilityFilter} from '../models';
 import {SET_VISIBILITY_FILTER} from '../actions/doSetVisibilityFilter';
