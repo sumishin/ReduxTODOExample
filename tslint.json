@@ -16,6 +16,8 @@
       true,
       "single",
       "avoid-escape"
-    ]
+    ],
+    "object-literal-sort-keys": false,
+    "ordered-imports": false
   }
 }

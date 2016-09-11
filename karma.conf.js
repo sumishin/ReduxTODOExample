@@ -17,33 +17,24 @@ module.exports = function (config) {
       'karma-mocha',
       'karma-sinon',
       'karma-mocha-reporter',
-      'karma-coverage',
       'karma-sourcemap-loader',
       'karma-webpack'
     ],
     preprocessors: {
-      'spec/*.ts': ['webpack', 'sourcemap'],
-      'spec/*.tsx': ['webpack', 'sourcemap']
+      'spec/**/*.spec.ts': ['webpack', 'sourcemap']
     },
     webpack: {
       devtool: 'inline-source-map',
       resolve: webpackConfig.resolve,
       module: webpackConfig.module
     },
-    reporters: ['mocha', 'coverage'],
+    reporters: ['mocha'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: false,
-    concurrency: Infinity,
-    coverageReporter: {
-      dir: 'coverage/',
-      reporters: [
-        { type: 'html' },
-        { type: 'text' }
-      ]
-    }
+    concurrency: Infinity
   })
 }
