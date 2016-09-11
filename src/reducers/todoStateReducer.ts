@@ -18,8 +18,6 @@ export const todoStateReducer = (state: TodoList = initialState, action: IAction
         let target = state.findById(payload.id);
         if(!!target) {
             target.completed = !target.completed;
-        } else {
-            throw 'not found';
         }
         return state;
     }

@@ -43,9 +43,8 @@ describe('todoStateReducer', () => {
                 id: 0,
             },
         };
-        assert.throws(() => {
-            todoStateReducer(undefined, action);
-        });
+        let newState = todoStateReducer(undefined, action);
+        assert(newState.length === 0);
     });
 
     it('should handle TOGGLE_TODO', () => {
@@ -72,7 +71,7 @@ describe('todoStateReducer', () => {
     });
 
     it('should handle not found TOGGLE_TODO', () => {
-        let action :IAction<TOGGLE_TODO> = {
+        let action: IAction<TOGGLE_TODO> = {
             type: TOGGLE_TODO,
             payload: {
                 id: 3,
@@ -83,8 +82,9 @@ describe('todoStateReducer', () => {
         prevSate.addNewTask('1');
         prevSate.addNewTask('2');
 
-        assert.throws(() => {
-            todoStateReducer(prevSate, action);
-        });
+        let newState = todoStateReducer(prevSate, action);
+        assert(newState[0].completed === false);
+        assert(newState[1].completed === false);
+        assert(newState[2].completed === false);
     });
 });
